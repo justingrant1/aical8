@@ -8,3 +8,4 @@ ruby '3.1.0'
 # Minimal gemset for deployment detection
 gem 'rails', '~> 7.0.0'
 gem 'bundler'
+gem 'bootsnap', '>= 1.4.4', require: false
