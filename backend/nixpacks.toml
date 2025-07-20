@@ -1,0 +1,18 @@
+[providers]
+ruby = "3.1"
+
+[variables]
+RAILS_ENV = "production"
+BUNDLE_WITHOUT = "development:test"
+
+[phases.setup]
+nixPkgs = ["...", "postgresql"]
+
+[phases.install]
+cmd = "bundle install"
+
+[phases.build]
+cmd = "bundle exec rails assets:precompile"
+
+[start]
+cmd = "bundle exec rails server -b 0.0.0.0 -p $PORT"

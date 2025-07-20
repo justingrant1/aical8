@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # Health check endpoint
-  get '/health', to: 'application#health'
+  get '/health', to: 'health#check'
 
   # API routes
   namespace :api do
