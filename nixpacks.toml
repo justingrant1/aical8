@@ -1,0 +1,13 @@
+[phases.setup]
+nixPkgs = ['ruby', 'bundler']
+
+[phases.install]
+# Use backend directory for all operations
+cmds = [
+    'cp backend/Gemfile backend/Gemfile.lock .',
+    'bundle install --deployment --without development test'
+]
+
+[start]
+# Run migrations and start server at runtime, not build time  
+cmd = 'cd backend && bundle exec rails db:migrate && bundle exec rails server -b 0.0.0.0 -p $PORT'
