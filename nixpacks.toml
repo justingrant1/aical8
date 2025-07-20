@@ -1,12 +1,11 @@
-[providers]
-ruby = "3.1"
+providers = ["ruby"]
 
 [variables]
 RAILS_ENV = "production"
 BUNDLE_WITHOUT = "development:test"
 
 [phases.setup]
-nixPkgs = ["...", "postgresql"]
+nixPkgs = ["postgresql"]
 
 [phases.install]
 cmd = "cd backend && bundle install"
