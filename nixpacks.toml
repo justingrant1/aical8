@@ -1,5 +1,5 @@
 [phases.setup]
-nixPkgs = ['ruby', 'bundler']
+nixPkgs = ['ruby']
 
 [phases.install]
 # Use backend directory for all operations
