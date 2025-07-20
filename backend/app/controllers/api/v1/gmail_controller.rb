@@ -176,8 +176,12 @@ class Api::V1::GmailController < ApplicationController
   end
 
   def gmail_callback_url
-    # This should match your frontend callback URL or API callback
-    "#{ENV['FRONTEND_URL']}/auth/gmail/callback"
+    # Use Rails API callback URL that matches our routes
+    if Rails.env.development?
+      "http://localhost:3000/api/v1/gmail/callback"
+    else
+      "#{ENV['API_BASE_URL'] || ENV['FRONTEND_URL']}/api/v1/gmail/callback"
+    end
   end
 
   def gmail_scopes
