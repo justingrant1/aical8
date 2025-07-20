@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalendarAI - Section 8 Rental Manager</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Section 8 Rental Manager</h1>
+                    <p>AI-powered email analysis for property inspections, work orders, and compliance tracking</p>
+                </div>
+                <nav class="nav-tabs">
+                    <button class="nav-tab active" data-tab="dashboard">
+                        <i class="fas fa-tachometer-alt"></i> Dashboard
+                    </button>
+                    <button class="nav-tab" data-tab="properties">
+                        <i class="fas fa-building"></i> Property Calendar
+                    </button>
+                    <button class="nav-tab" data-tab="emails">
+                        <i class="fas fa-envelope"></i> Email Analysis
+                    </button>
+                    <button class="nav-tab" data-tab="settings">
+                        <i class="fas fa-cog"></i> Settings
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Critical Items Alert -->
+            <div class="alert-section">
+                <div class="alert critical">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <div class="alert-content">
+                        <h3>Critical Items Requiring Immediate Attention</h3>
+                        <div class="alert-item">
+                            <strong>Annual HQS Inspection</strong><br>
+                            📍 347 Oak Street, Unit 2A<br>
+                            <em>Missing: Quality Standards inspection required</em>
+                        </div>
+                        <div class="alert-actions">
+                            <button class="btn btn-danger">Take Action</button>
+                            <button class="btn btn-outline">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statistics Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <i class="fas fa-home"></i>
+                        <span>Properties</span>
+                    </div>
+                    <div class="stat-number">24</div>
+                    <div class="stat-label">Total Properties</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Active Inspections</span>
+                    </div>
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">This Week</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <i class="fas fa-clipboard-list"></i>
+                        <span>Pending Work Orders</span>
+                    </div>
+                    <div class="stat-number">15</div>
+                    <div class="stat-label">Awaiting Action</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <i class="fas fa-certificate"></i>
+                        <span>Upcoming Certifications</span>
+                    </div>
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">Next 30 Days</div>
+                </div>
+
+                <div class="stat-card success">
+                    <div class="stat-header">
+                        <i class="fas fa-percentage"></i>
+                        <span>Compliance Rate</span>
+                    </div>
+                    <div class="stat-number">92%</div>
+                    <div class="stat-label">Overall</div>
+                </div>
+            </div>
+
+            <!-- Main Dashboard Content -->
+            <div class="dashboard-grid">
+                <!-- Upcoming Deadlines -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <i class="fas fa-clock"></i>
+                        <h3>Upcoming Deadlines</h3>
+                        <span class="card-subtitle">All property-related deadlines extracted from emails</span>
+                    </div>
+                    <div class="deadline-list">
+                        <div class="deadline-item urgent">
+                            <div class="deadline-info">
+                                <h4>Annual HQS Inspection</h4>
+                                <p>📍 347 Oak Street, Unit 2A</p>
+                                <span class="deadline-date">Due: 2 days</span>
+                            </div>
+                            <div class="deadline-actions">
+                                <span class="priority-badge danger">Inspection</span>
+                                <button class="btn-sm btn-outline">Schedule</button>
+                            </div>
+                        </div>
+
+                        <div class="deadline-item">
+                            <div class="deadline-info">
+                                <h4>Reinspection - Failed Items</h4>
+                                <p>📍 128 Pine Avenue, Unit 1B</p>
+                                <span class="deadline-date">Due: 5 days</span>
+                            </div>
+                            <div class="deadline-actions">
+                                <span class="priority-badge warning">Compliance</span>
+                                <button class="btn-sm btn-outline">View</button>
+                            </div>
+                        </div>
+
+                        <div class="deadline-item">
+                            <div class="deadline-info">
+                                <h4>Work Order Completion</h4>
+                                <p>📍 892 Elm Drive, Unit 3C</p>
+                                <span class="deadline-date">Due: 1 week</span>
+                            </div>
+                            <div class="deadline-actions">
+                                <span class="priority-badge info">Work Order</span>
+                                <button class="btn-sm btn-outline">Track</button>
+                            </div>
+                        </div>
+
+                        <div class="deadline-item">
+                            <div class="deadline-info">
+                                <h4>Rent Certification Renewal</h4>
+                                <p>📍 456 First Street, Unit 2A</p>
+                                <span class="deadline-date">Due: 2 weeks</span>
+                            </div>
+                            <div class="deadline-actions">
+                                <span class="priority-badge success">Certification</span>
+                                <button class="btn-sm btn-outline">Process</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Critical Emails -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <i class="fas fa-envelope-open-text"></i>
+                        <h3>Recent Critical Emails</h3>
+                        <span class="card-subtitle">AI-analyzed emails with extracted property information</span>
+                    </div>
+                    <div class="email-list">
+                        <div class="email-item">
+                            <div class="email-header">
+                                <strong>URGENT: Failed HQS Inspection - 347 Oak Street Unit 2A</strong>
+                                <span class="email-time">2 hours ago</span>
+                            </div>
+                            <div class="email-content">
+                                <div class="email-extract">
+                                    <strong>Properties:</strong> Failed HQS inspection due to electrical issues and plumbing violations.
+                                    <strong>Inspector:</strong> Sarah Wilson from Housing Authority.
+                                    <strong>Deadline:</strong> Reinspection must be completed within 30 days.
+                                    <strong>Action Required:</strong> Schedule electrical work and plumbing repairs.
+                                </div>
+                                <div class="email-tags">
+                                    <span class="tag critical">Critical</span>
+                                    <span class="tag inspection">Inspection</span>
+                                    <span class="tag deadline">30-day deadline</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="email-item">
+                            <div class="email-header">
+                                <strong>Extracted Information:</strong>
+                                <span class="email-time">4 hours ago</span>
+                            </div>
+                            <div class="email-content">
+                                <div class="email-extract">
+                                    <strong>Property:</strong> 128 Pine Avenue, Unit 1B<br>
+                                    <strong>Inspection Date:</strong> July 25, 2024<br>
+                                    <strong>Inspector:</strong> Mark Johnson, Housing Authority<br>
+                                    <strong>Status:</strong> Passed with minor recommendations<br>
+                                    <strong>Next Action:</strong> Schedule annual certification
+                                </div>
+                                <div class="email-actions">
+                                    <button class="btn-sm">Schedule Certification</button>
+                                    <button class="btn-sm btn-outline">View Full Email</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Financial Items & Compliance -->
+            <div class="bottom-grid">
+                <!-- Upcoming Payments & Financial Items -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <i class="fas fa-dollar-sign"></i>
+                        <h3>Upcoming Payments & Financial Items</h3>
+                        <span class="card-subtitle">HAP payments, utilities, and property expenses</span>
+                    </div>
+                    <div class="payment-grid">
+                        <div class="payment-item">
+                            <div class="payment-type">HAP Payment</div>
+                            <div class="payment-address">📍 347 Oak Street, Unit 2A</div>
+                            <div class="payment-amount">$1,250</div>
+                            <div class="payment-date">2025-01-25</div>
+                            <span class="status-badge overdue">Overdue</span>
+                        </div>
+
+                        <div class="payment-item">
+                            <div class="payment-type">Utility Allowance</div>
+                            <div class="payment-address">📍 128 Pine Ave, Unit 1B</div>
+                            <div class="payment-amount">$85</div>
+                            <div class="payment-date">2025-01-27</div>
+                            <span class="status-badge due">Due Soon</span>
+                        </div>
+
+                        <div class="payment-item">
+                            <div class="payment-type">Property Tax</div>
+                            <div class="payment-address">📍 892 Elm Drive</div>
+                            <div class="payment-amount">$2,400</div>
+                            <div class="payment-date">2025-02-15</div>
+                            <span class="status-badge upcoming">Upcoming</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 8 Compliance Status -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <i class="fas fa-clipboard-check"></i>
+                        <h3>Section 8 Compliance Status</h3>
+                        <span class="card-subtitle">Overall compliance tracking across all properties</span>
+                    </div>
+                    <div class="compliance-overview">
+                        <div class="compliance-bar">
+                            <div class="compliance-progress" style="width: 92%"></div>
+                        </div>
+                        <div class="compliance-text">92%</div>
+                    </div>
+                    <div class="compliance-breakdown">
+                        <div class="compliance-item">
+                            <span class="compliance-label">18 Compliant Properties</span>
+                            <span class="compliance-status success">✓</span>
+                        </div>
+                        <div class="compliance-item">
+                            <span class="compliance-label">4 Pending Inspections</span>
+                            <span class="compliance-status warning">⏳</span>
+                        </div>
+                        <div class="compliance-item">
+                            <span class="compliance-label">2 Failed Inspections</span>
+                            <span class="compliance-status danger">⚠</span>
+                        </div>
+                        <div class="compliance-item">
+                            <span class="compliance-label">6 Upcoming Renewals</span>
+                            <span class="compliance-status info">📅</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Demo Data Overlay -->
+    <div class="demo-overlay">
+        <div class="demo-badge">
+            <i class="fas fa-flask"></i>
+            <span>DEMO MODE</span>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
