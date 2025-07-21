@@ -1,0 +1,10 @@
+[phases.setup]
+nixPkgs = ['ruby']
+
+[phases.install]
+cmds = [
+    'cd backend && bundle install --deployment --without development test'
+]
+
+[start]
+cmd = "cd backend && bundle exec rails db:migrate && bundle exec rails server -b 0.0.0.0 -p $PORT"
