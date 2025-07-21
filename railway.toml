@@ -3,7 +3,7 @@ builder = "NIXPACKS"
 buildCommand = "bundle install"
 
 [deploy]
-startCommand = "bundle exec rails db:migrate && bundle exec rails server"
+startCommand = "bundle exec rails -v"
 healthcheckPath = "/health"
 
 [environments.production]
