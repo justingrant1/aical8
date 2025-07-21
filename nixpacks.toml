@@ -1,10 +1,16 @@
+[variables]
+NIXPACKS_PATH = "/app"
+
 [phases.setup]
 nixPkgs = ['ruby']
 
 [phases.install]
 cmds = [
-    'cd backend && bundle install --deployment --without development test'
+    'ls -la',
+    'cp -r backend/* . || echo "Copy failed"',
+    'ls -la',
+    'bundle install --deployment --without development test'
 ]
 
 [start]
-cmd = "cd backend && bundle exec rails db:migrate && bundle exec rails server -b 0.0.0.0 -p $PORT"
+cmd = "bundle exec rails db:migrate && bundle exec rails server -b 0.0.0.0 -p $PORT"
