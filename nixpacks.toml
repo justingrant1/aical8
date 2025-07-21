@@ -6,7 +6,7 @@ RAILS_ENV = "production"
 BUNDLE_WITHOUT = "development:test"
 
 [phases.setup]
-nixPkgs = ["...", "postgresql"]
+nixPkgs = ["postgresql"]
 
 [phases.install]
 cmd = "bundle install"
