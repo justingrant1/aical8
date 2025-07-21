@@ -1,7 +1,9 @@
 [build]
 builder = "NIXPACKS"
+buildCommand = "bundle install"
 
 [deploy]
+startCommand = "bundle exec rails db:migrate && bundle exec rails server"
 healthcheckPath = "/health"
 
 [environments.production]
