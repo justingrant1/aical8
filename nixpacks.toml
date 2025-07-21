@@ -1,16 +1,18 @@
+[providers]
+ruby = "3.1"
+
 [variables]
-NIXPACKS_PATH = "/app"
+RAILS_ENV = "production"
+BUNDLE_WITHOUT = "development:test"
 
 [phases.setup]
-nixPkgs = ['ruby']
+nixPkgs = ["...", "postgresql"]
 
 [phases.install]
-cmds = [
-    'ls -la',
-    'cp -r backend/* . || echo "Copy failed"',
-    'ls -la',
-    'bundle install --deployment --without development test'
-]
+cmd = "bundle install"
+
+[phases.build]
+cmd = "bundle exec rails assets:precompile"
 
 [start]
 cmd = "bundle exec rails db:migrate && bundle exec rails server -b 0.0.0.0 -p $PORT"

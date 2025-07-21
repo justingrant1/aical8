@@ -1,0 +1,25 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+  # Supabase connection details
+  host: <%= ENV.fetch('SUPABASE_DB_HOST', 'localhost') %>
+  port: <%= ENV.fetch('SUPABASE_DB_PORT', 5432) %>
+  database: <%= ENV.fetch('SUPABASE_DB_NAME', 'postgres') %>
+  username: <%= ENV.fetch('SUPABASE_DB_USERNAME', 'postgres') %>
+  password: <%= ENV.fetch('SUPABASE_DB_PASSWORD', '') %>
+  
+development:
+  <<: *default
+
+test:
+  <<: *default
+  database: <%= ENV.fetch('SUPABASE_TEST_DB_NAME', 'postgres_test') %>
+
+production:
+  <<: *default
+  # Use connection pooling in production
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 20 } %>
+  # Enable SSL in production
+  sslmode: require
