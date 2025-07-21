@@ -32,7 +32,7 @@ gem 'ruby-openai'  # OpenAI API client
 
 # Utilities
 gem 'dotenv-rails'  # Environment variables
-gem 'bootsnap', '>= 1.4.4', require: false  # Faster boot times
+# gem 'bootsnap', '>= 1.4.4', require: false  # Faster boot times
 gem 'image_processing', '~> 1.2'  # Image processing
 
 # Validation & serialization
