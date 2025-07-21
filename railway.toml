@@ -2,7 +2,7 @@
 builder = "NIXPACKS"
 
 [deploy]
-startCommand = "cd backend && bundle exec rails server -b 0.0.0.0 -p $PORT"
+startCommand = "cd backend && bundle exec rails db:migrate && bundle exec rails server -b 0.0.0.0 -p $PORT"
 healthcheckPath = "/health"
 
 [environments.production]
