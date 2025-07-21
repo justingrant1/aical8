@@ -14,5 +14,5 @@ cmd = "bundle install"
 [phases.build]
 cmd = "bundle exec rails assets:precompile"
 
-[start]
+[phases.start]
 cmd = "bundle exec rails server -b 0.0.0.0 -p $PORT"
